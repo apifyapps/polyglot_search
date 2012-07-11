@@ -1,0 +1,38 @@
+- languages = ['fortran','c','go','cpp','objectivec','java','csharp','php','perl','python','ruby','lua','javascript','io','common_lisp','scheme','clojure','emacs_lisp','ml','ocaml','scala','haskell']
+- language_display_names = ['Fortran','C','Go','C++','Obj C','Java','C#','PHP','Perl','Python','Ruby','Lua','Javascript','IO','Common Lisp','Scheme','Clojure','Emacs Lisp','ML','OCaml','Scala','Haskell']
+- language_highlight_class = ['cpp  ','cpp','go','cpp','objectivec','java','cs','php','perl','python','ruby','lua','javascript','javascript','lisp','lisp','lisp','lisp','haskell','haskell','scala','haskell']
+.content
+  .row
+    .span12.title
+      Polyglot Programmer
+  .row
+    .span4.offset4.caption
+      Built with
+      %a{href: "http://hyperpolyglot.org", target: '_blank'}
+        Hyperpolyglot
+      and
+      %a{href: "http://apify.heroku.com/apps", target: '_blank'}
+        APIfy
+  .row
+    &nbsp;
+  .row
+    .how-do-i.span8
+      How do I Code
+      %input#property{placeholder: 'Ex. Hello World'}
+      ?
+    .span4
+      Select Theme
+  .row
+    .languages.span8
+      %ul.nav.nav-pills
+        - languages.each_with_index do |language, index|
+          %li.language.disabled{class: "language-#{language}"}
+            %a{href: '#', "data-lang" => "#{language}"}
+              = language_display_names[index]
+  - languages.each_with_index do |language, index|
+    .row.kode.span8{class: "kode-#{language}", style: "display:none"}
+      .kode-language
+        = language_display_names[index]
+      %div
+        %pre
+          %code{class: "#{language_highlight_class[index]}"}
