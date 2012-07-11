@@ -1,27 +1,35 @@
-
 .app-content {
   font-family: Helvetica, sans-serif;
 }
-.title{
+
+.title {
   padding: 10px;
-  font-size: 20px;
+  font-size: 30px; 
 }
-.caption{
+
+.caption {
   margin-left: 20px;
 }
-.label_text {
-  font-size: 18px;
+
+#property {
+  min-height: 40px;
+  font-size: 24px;
+  width: 60%;
 }
-#from, #to {
-  min-height: 24px;
+
+.how-do-i {
+  font-size: 24px;
 }
-.route_table {
-  margin-left: 30px;
-  margin-top: 20px;
+
+.nav-pills>.disabled>a {
+  color: #999;
+  cursor: default;
 }
-.route_table td,.route_table th {
-  padding: 3px;
+
+.nav-pills>.disabled>a:hover {
+  background-color: transparent;
 }
-.route_table .route-title{
-  min-width: 100px;
+
+.kode-language {
+  font-weight: bold;
 }
