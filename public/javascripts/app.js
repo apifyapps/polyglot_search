@@ -67,8 +67,9 @@ $(function(){
     var propertyLanguages = Object.keys(propertyCode);
     for(var i=0; i<propertyLanguages.length; i++){
       var lang = propertyLanguages[i];
+      var code = propertyCode[lang] || '-';
       $('.language-' + lang).removeClass('disabled').addClass('active');
-      $('.kode-' + lang).find('code').html(propertyCode[lang]);
+      $('.kode-' + lang).find('code').html(code);
       $('.kode-' + lang).show();
     }
     highlightCode();
