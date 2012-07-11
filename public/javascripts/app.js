@@ -90,8 +90,6 @@ $(function(){
   }
 
   function highlightCode(){
-    $('code').each(function(){
-      hljs.highlightBlock(this, null, true);  
-    });
+    $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
   }
 });
