@@ -44,7 +44,7 @@ $(function(){
         languageProperties[property.property] = {};
       }
       for(var lang in property){
-        if(lang != 'property'){
+        if(lang != 'property' && property[lang] && !property[lang].match(/none/)){
           languageProperties[property.property][lang] = property[lang];
         }
       }
@@ -62,7 +62,7 @@ $(function(){
 
   function showProperty(property){
     $('.kode').hide();
-    $('.language').addClass('disabled');
+    $('.language').removeClass('active').addClass('disabled');
     var propertyCode = languageProperties[property];
     var propertyLanguages = Object.keys(propertyCode);
     for(var i=0; i<propertyLanguages.length; i++){
