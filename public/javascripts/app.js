@@ -6,24 +6,11 @@ var languageUrls = {
   'lisp': "http://apify.heroku.com/api/polyglot_lisp.json?callback=?",
   'ml': "http://apify.heroku.com/api/polyglot_ml.json?callback=?",
 }
-// var languages = ['fortran','c','go','cpp','objectivec','java','csharp','php','perl','python','ruby','tcl','lua','javascript','io','common_lisp','scheme','clojure','emacs_lisp','ml','ocaml','scala','haskell'];
-var languages = ['php','perl','python','ruby'];
 var languageProperties = {};
-var defaultTheme;
-var defaultProperty;
 
 $(function(){
   hljs.tabReplace = '    ';
   hljs.initHighlightingOnLoad();
-
-  // $.when($.getJSON(languageUrls.scripting)).done(
-  //   function(properties){
-  //     properties = JSON.parse(properties);
-  //     parseFamily(properties);    
-  //     bindAutocomplete();
-  //     bindLanguages();
-  //   }
-  // );
 
   $.when($.getJSON(languageUrls.c), $.getJSON(languageUrls.cpp), $.getJSON(languageUrls.scripting), $.getJSON(languageUrls.interpreted), $.getJSON(languageUrls.lisp), $.getJSON(languageUrls.ml)).done(
     function(c, cpp, scripting, interpreted, lisp, ml){
